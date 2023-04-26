@@ -1,0 +1,18 @@
+{ 
+	"title" : "Asset Metadata", 
+	"type" : "object", 
+	"properties" : { 
+		"name" : { 
+			"type" : "string", 
+			"description" : "ERC721 NFT Item 1" 
+		}, 
+		"description" : { 
+			"type" : "string", 
+			"description" : "721 NFT Item with simple EIP-Metadata Standard." 
+		}, 
+		"image" : { 
+			"type" : "string", 
+			"description" : "https://nftstorage.link/ipfs/QmZbEJEyeQfx9cuNzFNDu69qWzDBLQRbV4myS4SpADZEPG?filename=1.png" 
+		} 
+	} 
+}

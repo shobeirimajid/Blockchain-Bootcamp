@@ -1,0 +1,8 @@
+{ 
+	"name": "Amirkabir 721 NFT Items", 
+	"description": "Amirkabir 721 NFT Items used in different applications such as Games, Metaverse and etc.", 
+	"image": "https://nftstorage.link/ipfs/QmUjGD8TKdCPatXPoVJZgTqJ6mjfmd3Xk4PPfcPV1GfpUH?filename=ERC721Collection.jpg", 
+	"external_link": "https://amirkabir-science.com/", 
+	"seller_fee_basis_points": 1000, 
+	"fee_recipient": "0x77895Bb79F53BEE4F2c98264A167bCD735B0d460" 
+}

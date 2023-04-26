@@ -1,0 +1,12 @@
+
+Testent Address:
+https://mumbai.polygonscan.com/
+
+Faucet to give Matic:
+https://faucet.polygon.technology/
+
+Deployed Contract:
+https://mumbai.polygonscan.com/address/0xbdcf9ec5b4aa806601c8bfb433718269f799ec5a
+
+Opensea Testnet
+https://testnets.opensea.io/

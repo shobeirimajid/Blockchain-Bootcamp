@@ -1,0 +1,48 @@
+﻿1. Node
+	LastVer:        https://nodejs.org/en/
+	OtherReleases:  https://nodejs.org/en/download/releases/
+	Win7:           https://nodejs.org/dist/latest-v12.x/	
+	node -v 
+	npm –v
+	
+	
+2. Truffle
+	Doc:  https://trufflesuite.com/docs/truffle/
+	npm install -g truffle
+	truffle version	
+	
+	
+3. Ganache
+	Windows:    https://www.trufflesuite.com/ganache
+	Linux&Mac:  https://github.com/trufflesuite/ganache-ui/releases/tag/v2.6.0-beta.3
+
+
+4. IDE:
+	VScode				https://soft98.ir/software/programming/53-visual-studio-code.html
+	Solidity Plugin: 	https://marketplace.visualstudio.com/items?itemName=JuanBlanco.solidity
+
+
+**********************************************************************************
+
+
+5. SmartContract of Project
+	truffle init
+	truffle compile
+	Truffle Project 
+		"Modify Project Config File: truffle-config.js"
+		" Add Truffle_Project (truffle-config.js) to Ganache "
+		" make x_initial_YOUR-Contract_NAME file in migration folder "
+	truffle migrate –-reset
+	
+	
+6. DApp of Project
+	npm init		
+	npm install	
+
+	
+7. Run DApp
+	npm start
+		" Login Metamask "
+		" Add Ganache to Metamsk Networks"
+		" Import Ganache Account into Metamask"		
+		"open link [htpp://127.0.0.1:3000] in Your Browser"
