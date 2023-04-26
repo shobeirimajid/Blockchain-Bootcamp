@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ثبت نام</title>
+  </head>
+  <body>
+    <div style="direction: rtl;">
+      <h1>فرم ثبت نام کاربر</h1>
+      <p>برای ثبت نام، لطفاً فرم را تکمیل و روی دکمه ثبت نام کلیک نمایید.</p>
+      <form autocomplete="on" method="get" oninput="result.value=langs.value">
+        <fieldset>
+          <legend>اطلاعات پرسنلی</legend>
+          <label for="fname">نام:</label>
+          <input
+            type="text"
+            id="fname"
+            name="fname"
+            placeholder="نام"
+            size="30"
+            maxlength="20"
+            required
+          /><br /><br />
+          <label for="lname">نام خانوادگی:</label>
+          <input
+            type="text"
+            id="lname"
+            name="lname"
+            placeholder="نام خانوادگی"
+            size="30"
+            pattern="[A-Za-z]{20}"
+            required
+            autofocus
+          /><br /><br />
+          <label for="email">آدرس ایمیل:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="آدرس ایمیل"
+            required
+          /><br /><br />
+          <label for="mobile">شماره تلفن همراه:</label>
+          <input
+            type="tel"
+            id="mobile"
+            name="mobile"
+            placeholder="برای مثال : 09123589874"
+            pattern="[0-9]{11}"
+          /><br /><br />
+
+          <input
+            type="radio"
+            id="male"
+            name="ismaleorfemale"
+            value="male"
+            checked
+          />
+          <label for="male">مرد</label><br />
+          <input
+            type="radio"
+            id="female"
+            name="ismaleorfemale"
+            value="female"
+          />
+          <label for="female">زن</label><br />
+          <hr />
+          <input
+            type="radio"
+            id="mojarrad"
+            name="ismojarrad"
+            value="mojarrad"
+            checked
+          />
+          <label for="mojarrad">مجرد</label><br />
+          <input type="radio" id="motahel" name="ismojarrad" value="motahel" />
+          <label for="mojarrad">متأهل</label><br />
+
+          <hr />
+
+          <label for="birthday">تاریخ تولد:</label>
+          <input type="date" id="birthday" name="birthday" />
+
+          <hr />
+
+          <label for="homepage">آدرس وب سایت: </label>
+          <input type="url" id="homepage" name="homepage" />
+        </fieldset>
+
+        <fieldset>
+          <legend>سوابق برنامه نویسی</legend>
+          <label for="langs">زبان برنامه نویسی مورد علاقه شما:</label>
+          <select id="langs" name="langs" size="1">
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="js" selected>JavaScript</option>
+            <option value="bs">Bootstrap</option> </select
+          ><br /><br />
+          زبان انتخابی شما:
+          <output name="result" for="langs"></output>
+          <br /><br />
+
+          <label for="otherlangs">سایر زبان ها:</label>
+          <input list="otherlangs" />
+          <datalist id="otherlangs">
+            <option value="React"> </option>
+            <option value="PHP"> </option>
+            <option value="C#"> </option>
+            <option value="Asp.Net"> </option>
+            <option value="Python"> </option>
+          </datalist>
+
+          <br /><br />
+
+          <textarea
+            name="message"
+            rows="5"
+            cols="50"
+            placeholder="توضیحات شما در مورد سوابق برنامه نویسی"
+            style="background-color: darkseagreen;"
+          ></textarea>
+
+          <br /><br />
+
+          <label for="cv">رزومه:</label>
+          <input type="file" id="cv" name="cv" />
+        </fieldset>
+        <br /><br />
+
+        <fieldset>
+          <legend>مشاغل مورد علاقه شما:</legend>
+          <input
+            type="checkbox"
+            id="developer"
+            name="developer"
+            value="dev"
+            checked
+          />
+          <label for="developer">برنامه نویس</label><br />
+          <input type="checkbox" id="test" name="test" value="tester" />
+          <label for="test">تست و امنیت</label><br />
+          <input type="checkbox" id="design" name="design" value="des" />
+          <label for="design"> طراح نرم افزار</label><br /><br />
+        </fieldset>
+
+        <br /><br />
+
+        <fieldset>
+          <legend>شرایط کاری:</legend>
+          <label for="bdaymonth">از چه ماهی قادر به شروع همکاری هستید:</label>
+          <input type="month" id="bdaymonth" name="bdaymonth" />
+
+          <br /><br />
+
+          <label for="quantity">چند روز از هفته را قادر به کار هستید:</label>
+          <input
+            type="number"
+            id="quantity"
+            name="quantity"
+            min="1"
+            max="7"
+            step="2"
+          />
+
+          <br /><br />
+
+          <label for="vol">میزان حقوق درخواستی (5م.ت الی 10 م.ت):</label>
+          <input type="range" id="vol" name="vol" min="5" max="10" />
+
+          <br /><br />
+
+          <label for="appt">ساعت پیشنهادی شروع کار:</label>
+          <input type="time" id="appt" name="appt" />
+        </fieldset>
+
+        <br /><br />
+
+        <button type="button" onclick="alert('اطلاعات فرم صحیح است')">
+          بررسی فرم
+        </button>
+
+        <input type="reset" />
+
+        <input type="submit" value="ثبت درخواست" />
+      </form>
+    </div>
+  </body>
+</html>

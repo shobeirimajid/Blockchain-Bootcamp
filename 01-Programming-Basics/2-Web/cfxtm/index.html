@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="refresh" content="30" />
+    <title>My First WebSite</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/img/Ethereum.png" />
+    <!--style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      li {
+        float: left;
+      }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 16px;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: #111111;
+      }
+    </style-->
+  </head>
+  <body style="background-color: whitesmoke;">
+    <!--
+  _self - Default. Opens the document in the same window/tab as it was clicked
+  _blank - Opens the document in a new window or tab
+  _parent - Opens the document in the parent frame
+  _top - Opens the document in the full body of the window
+-->
+    <div style="background-color: #333333;">
+      <ul>
+        <img
+          src="img/Ethereum.png"
+          alt="SiteLogo"
+          width="40"
+          id="logo"
+          style="float: left;"
+        />
+        <li><a href="pages/about.html" target="_blank">درباره ما</a></li>
+        <li><a href="pages/contactus.html" target="_blank">تماس با ما</a></li>
+        <li><a href="mailto:someone@example.com">ایمیل</a></li>
+      </ul>
+    </div>
+
+    <hr />
+    <button onclick="document.location='pages/signup.html'">ثبت نام</button>
+    <button onclick="document.location='pages/about.html'">About us</button>
+    <button onclick="document.location='pages/contactus.html'">
+      تماس با ما
+    </button>
+    <button onclick="document.location='pages/media.html'">گالری</button>
+
+    <iframe
+      src="pages/about.html"
+      name="iframe_a"
+      height="400px"
+      width="100%"
+      title="Iframe Example"
+    ></iframe>
+
+    <div
+      style="
+        text-decoration: none;
+        color: palegoldenrod;
+        background-color: slategrey;
+      "
+    >
+      <p>
+        <a
+          href="pages/contactus.html"
+          target="iframe_a"
+          style="
+            text-decoration: none;
+            float: left;
+            margin-right: 20px;
+            background-color: sandybrown;
+          "
+          >contactus</a
+        >
+      </p>
+      <p>
+        <a
+          href="pages/about.html"
+          target="iframe_a"
+          style="
+            text-decoration: none;
+            float: left;
+            margin-right: 20px;
+            background-color: saddlebrown;
+          "
+          >about</a
+        >
+      </p>
+    </div>
+
+    <h1 style="font-size: 60px;">My First Heading</h1>
+
+    <hr />
+
+    <br />
+    <img src="img/1.jpg" alt="W3Schools.com" width="400" id="head1" />
+
+    <hr />
+
+    <h1 style="color: blue;">This is&nbsp;&nbsp;&nbsp;&nbsp;heading 1</h1>
+    <h2 style="color: red;">This is heading 2</h2>
+    <h3 style="color: white; background-color: midnightblue;">
+      This is heading 3
+    </h3>
+    <h4>This is heading 5</h4>
+    <h5>This is heading 5</h5>
+    <h6>This is heading 6</h6>
+
+    <hr />
+
+    <p style="color: blue;">This is a red paragraph.</p>
+    <p title="I'm a tooltip">This is a paragraph.</p>
+    <p title="John 'ShotGun' Nelson">This is a paragraph.</p>
+    <p title='John "ShotGun" Nelson'>This is a paragraph.</p>
+
+    <hr />
+
+    <pre
+      style="
+        color: orangered;
+        font-family: courier;
+        font-size: 20px;
+        text-align: center;
+      "
+    >
+      This paragraph 
+      contains a lot of lines
+      in the source code,
+      but the browser 
+      ignores it.
+      </pre
+    >
+
+    <pre>
+      This paragraph
+      contains       a lot of spaces
+      in the source     code,
+      but the    browser 
+      ignores it.
+      </pre
+    >
+
+    <pre>
+      The number of lines in a paragraph depends on the size of the browser window. If you resize the browser window, the number of lines in this paragraph will change.
+      </pre
+    >
+
+    <hr />
+
+    <p style="direction: rtl;">
+      دوره آموزش مبانی برنامه نویسی web
+    </p>
+
+    <p>This is<br />a paragraph<br />with line breaks.</p>
+
+    <small>This is some smaller text.</small>
+    <p><b>This text is bold. </b> <i>This text is italic</i></p>
+
+    <p>This is<sub> subscript</sub> and <sup>superscript</sup></p>
+    <em>This text is emphasized</em>
+    <!--em>This text is emphasized</em-->
+    <p>Do not forget to buy <mark>milk</mark> today.</p>
+
+    <p>Price of this product: <del>100$</del> 80$.</p>
+
+    <hr />
+
+    <!-- نقل قول -->
+    <p>Here is a quote from WWF's website:</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+      For 50 years, WWF has been protecting the future of nature. The world's
+      leading conservation organization, WWF works in 100 countries and is
+      supported by 1.2 million members in the United States and close to 5
+      million globally.
+    </blockquote>
+
+    <p>
+      WWF's goal is to:
+      <q>Build a future where people live in harmony with nature.</q>
+    </p>
+
+    <hr />
+
+    <p>The <abbr title="World Wide Web">WWW</abbr> was founded in 1948.</p>
+
+    <hr />
+
+    <!--
+      <p>The <abbr title="World Wide Web">WWW</abbr> was founded in 1948.</p>
+      <p>The <abbr title="World Wide Web">WWW</abbr> was founded in 1948.</p>
+      <address>
+      Written by John Doe.<br />
+      Visit us at:<br />
+      Example.com<br />
+      Box 564, Disneyland<br />
+      USA
+    </address>
+    -->
+
+    <h1 style="background-color: #dc143c;">Crimson</h1>
+
+    <h1 style="background-color: Orange;">Orange</h1>
+    <h1 style="background-color: DodgerBlue;">DodgerBlue</h1>
+    <h1 style="background-color: MediumSeaGreen;">MediumSeaGreen</h1>
+    <h1 style="background-color: Gray;">Gray</h1>
+    <h1 style="background-color: SlateBlue;">SlateBlue</h1>
+    <h1 style="background-color: Violet;">Violet</h1>
+    <h1 style="background-color: LightGray;">LightGray</h1>
+
+    <h1 style="background-color: rgb(255, 99, 71);">rgb(255, 99, 71)</h1>
+    <h1 style="background-color: hsl(9, 100%, 64%);">hsl(9, 100%, 64%)</h1>
+
+    <p>Same as color name "Tomato", but 50% transparent:</p>
+    <h1 style="background-color: rgba(255, 99, 71, 0.5);">
+      rgba(255, 99, 71, 0.5)
+    </h1>
+    <h1 style="background-color: hsla(9, 100%, 64%, 0.5);">
+      hsla(9, 100%, 64%, 0.5)
+    </h1>
+
+    <p>
+      In addition to the predefined color names, colors can be specified using
+      RGB, HEX, HSL, or even transparent colors using RGBA or HSLA color values.
+    </p>
+
+    <h1 style="border: 5px solid Tomato;">Hello World</h1>
+
+    <h1 style="border: 3px solid DodgerBlue;">Hello World</h1>
+
+    <h1 style="border: 1px solid Violet;">Hello World</h1>
+
+    <hr />
+
+    <!-- آدرس شرکت -->
+    <address>
+      Written by John Doe.<br />
+      Visit us at:<br />
+      Example.com<br />
+      Box 564, Disneyland<br />
+      USA
+    </address>
+
+    <p>
+      My mother has
+      <span style="color: blue; font-weight: bold;">blue</span> eyes and my
+      father has
+      <span style="color: darkolivegreen; font-weight: bold;">dark green</span>
+      eyes.
+    </p>
+
+    <p
+      style="text-align: center; background-color: gainsboro; color: burlywood;"
+    >
+      <a href="#Top" style="text-decoration: none;">^</a>
+    </p>
+
+    <iframe
+      src="pages/contactus.html"
+      style="border: 2px solid red;"
+      width="100%"
+      title="Iframe Example"
+    ></iframe>
+    <p>Powered by &#128151. &copy;All Rights Reserved.</p>
+    <hr />
+  </body>
+</html>
