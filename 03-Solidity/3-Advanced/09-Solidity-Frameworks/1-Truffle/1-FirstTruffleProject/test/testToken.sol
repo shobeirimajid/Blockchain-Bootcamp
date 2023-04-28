@@ -37,10 +37,10 @@ contract TestMyToken {
     function testIntialBalance() public {
 
         console.log("accounts[0] balance after charging contract: ", acc0_InitBalance);
+        console.log("TestMyToken initialBalance", address(this).balance);
 
         // Truffle will send the TestMyToken one Ether after deploying the contract.
         Assert.equal(address(this).balance, 75 ether , "incorrect initialBalance of TestMyToken");
-        console.log("TestMyToken initialBalance", address(this).balance);
     }
 
 
