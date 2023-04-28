@@ -9,67 +9,75 @@ import "truffle/console.sol";
 contract TestMyToken {
 
     // Truffle will send the TestMyToken 5 Ether after deploying the contract.
-    uint public initialBalance = 75 ether;
+    uint public initialBalance = 5 ether;
 
     MyToken mtk;
-
     address owner;
+
+    address creator;
+
     address acc0;
     address acc1;
     address acc2;
 
     uint acc0_InitBalance;
 
-    function  beforeAll() public {
+    constructor() {
+        creator = msg.sender;
+    }
 
+    function  beforeAll() public {
         acc0 = 0xa0A9F2b0b60635C75d5a935D93019e0981482B88;
         acc1 = 0xa71dcE268b90F433b019BA95c6dc67624dE917dE;
         acc2 = 0xE3a3A1396b662F7489Db4Ab07623dD9809A23cD5;
 
         acc0_InitBalance = acc0.balance;
 
-        // owner of the MyToken will be this contract ( i.e. address(this) )
+        // owner of the MyToken is this contract ( i.e. address(this) )
         owner = address(this);
 
         mtk = new MyToken();
     }
 
-    function testIntialBalance() public {
+    function testIntialInfo() public {
+        console.log("TestMyToken created by:       ", creator);
+        console.log("TestMyToken contract address: ", address(this));
+        console.log("TestMyToken initialBalance:   ", address(this).balance);
 
-        console.log("accounts[0] balance after charging contract: ", acc0_InitBalance);
-        console.log("TestMyToken initialBalance", address(this).balance);
+        Assert.equal(creator, acc0 , "incorrect creator of TestMyToken");
 
         // Truffle will send the TestMyToken one Ether after deploying the contract.
-        Assert.equal(address(this).balance, 75 ether , "incorrect initialBalance of TestMyToken");
+        Assert.equal(address(this).balance, initialBalance , "incorrect initialBalance of TestMyToken");
     }
-
 
     // 1-Token should be deployed with correct info
     function testTokenInfo() public {
-
         //MyToken mtk = MyToken(DeployedAddresses.MyToken());
+
+        console.log("token name:     ", mtk.name());
+        console.log("token symbol:   ", mtk.symbol());
+        console.log("token decimals: ", mtk.decimals());
+        console.log("token owner:    ", mtk.owner());
+
         Assert.equal(mtk.name(), "MyToken", "Name of Token must be 'MyToken'");
         Assert.equal(mtk.symbol(), "MTK", "Symbol of Token must be 'MTK'");
         Assert.equal(mtk.decimals(), 18, "decimals of Token should be 18");
+        Assert.equal(mtk.owner(), owner , "incorrect owner of MyToken");
     }
-
 
     // 2-should mint 1000 MTK Token to the first account
     function testTokenMint() public {
-
         //MyToken mtk = MyToken(DeployedAddresses.MyToken());
         uint amount = 1000;
 
-        // owner (this contract) is the owner of MyToken and is calling safeMint to mint tokens for itself
+        // this contract (owner) is the owner of MyToken and calls safeMint to mint tokens for itself
         mtk.safeMint(owner, amount);
         Assert.equal(mtk.balanceOf(owner), amount, "balance of acc0 should be 1000");
         Assert.equal(mtk.totalSupply(), amount, "totalSupply of Token should be 1000");
     }
 
-
     // 3-should sent 200 MTK Token from the owner to the acc1
     function testTokenTransfer() public {
-
         // Check the initial balances of owner and acc1.
         Assert.equal(mtk.balanceOf(owner), 1000, "");
         Assert.equal(mtk.balanceOf(acc1), 0, "");
@@ -83,23 +91,27 @@ contract TestMyToken {
     }
 
     function testFinalBalance() public {
-
         uint acc0_FinalBalance = acc0.balance;
-        console.log("accounts[0] final ether balance: ", acc0_FinalBalance);
-        console.log("Gas paid by accounts[0]: ",  75 ether - ((acc0_InitBalance + 75 ether) - acc0_FinalBalance));
+
+        console.log("acc[0] balance after charging contract: ", acc0_InitBalance);
+        console.log("acc[0] final ether balance:             ", acc0_FinalBalance);
+        console.log("Gas paid by accounts[0]:                ",  initialBalance - ((acc0_InitBalance + initialBalance) - acc0_FinalBalance));
+        console.log("contract final ether balance:           ", address(this).balance);
 
         // sent Ethers by Truffle must have remained in the contract after test execution.
-        Assert.equal(address(this).balance, 75 ether , "incorrect Balance of TestMyToken");
-        console.log("contract final ether balance: ", address(this).balance);
+        Assert.equal(address(this).balance, initialBalance , "incorrect Balance of TestMyToken");
     }
 
     function afterAll() public {
 
         // Send remained tokens to acc0.
         console.log("remained tokens inside the Test contract: ", mtk.balanceOf(owner));
+
         mtk.transfer(acc0, mtk.balanceOf(owner));
-        Assert.equal(mtk.balanceOf(owner), 0, "there are tokens inside contract yet");
+
         console.log("remained tokens inside the Test contract: ", mtk.balanceOf(owner));
+
+        Assert.equal(mtk.balanceOf(owner), 0, "there are tokens inside contract yet");
 
         // Send remained ethers to acc0.
         selfdestruct(payable(acc0));

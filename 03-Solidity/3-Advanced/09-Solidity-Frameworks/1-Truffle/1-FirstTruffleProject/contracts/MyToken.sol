@@ -10,8 +10,6 @@ contract MyToken is ERC20, Ownable {
 
     function safeMint(address account, uint amount) public onlyOwner {
         _mint(account, amount);
-        console.log("Owner of MyToken: ", owner());
-        console.log("tokens minted for: ", account);
         console.log("minted tokens count: ", amount);
     }
 }
